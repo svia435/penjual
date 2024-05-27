@@ -15,7 +15,7 @@
 
 
 
-  <table class="table" id="daftar-pembeli">
+  <table class="table" id="daftar-penjual">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -32,16 +32,16 @@
 
   <img src="loader.gif" style="width: 5em; display: block" id="loader">
 
-  <a href="form-data-pembeli.html">tambah data penjual</a>
+  <a href="form-data-penjual.html">tambah data penjual</a>
 
 
 
   <script type="module">
-    import { ambilDaftarPenjual, hapusPembeli } from './main.js';
+    import { ambilDaftarPenjual, hapusPenjual } from './main.js';
 
     $(document).ready(async function() {
-      let elemenDaftar = $("#daftar-pembeli > tbody");
-      let daftarPenjual = await ambilDaftarPembeli();
+      let elemenDaftar = $("#daftar-penjual > tbody");
+      let daftarPenjual = await ambilDaftarPenjual();
       let nomor = 1;
 
       daftarPenjual.forEach((data) => {
@@ -65,7 +65,7 @@
 $('#loader').hidel
 
       $('.tombol-hapus').click(async function() {
-        await hapusPembeli($(this).attr('data'));
+        await hapusPenjual($(this).attr('data'));
         location.reload();
       })
 

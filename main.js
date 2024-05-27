@@ -67,6 +67,7 @@ export async function tambahPenjual(nama, alamat, notlpn) {
 
 export async function hapusPenjual(docId) {
   await deleteDoc(doc(db,"penjual", docId));
+}
 //######################################
 export async function ubahPenjual(docId, nama, alamat, gmail, noTlpn) {
   await updateDoc(doc(db, "penjual", docId), {
@@ -84,4 +85,3 @@ export async function ubahPenjual(docId, nama, alamat, gmail, noTlpn) {
     return await docSnap.data();
  }
  
-}
